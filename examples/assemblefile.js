@@ -18,17 +18,17 @@ var collection = require('..');
 var app = assemble();
 app.use(collection());
 
-var dest = path.join(__dirname, 'dist/example');
+var dest = path.join.bind(path, __dirname, 'dist');
 app.create('lists');
 
-app.task('load', function(cb) {
+app.task('load-simple', function(cb) {
   app.lists('*.hbs', {cwd: path.join(__dirname, 'src/templates/lists')})
   app.partials('*.hbs', {cwd: path.join(__dirname, 'src/templates/partials')})
   app.pages('*.hbs', {cwd: path.join(__dirname, 'src')});
   cb();
 });
 
-app.task('default', ['load'], function() {
+app.task('simple', ['load-simple'], function() {
   return app.createIndex('pages', {
       File: app.View,
       pattern: ':tags/:tag/page/:pager.idx/index.hbs',
@@ -45,15 +45,11 @@ app.task('default', ['load'], function() {
     .pipe(buffer())
     .pipe(app.renderFile())
     // write rendered files to the destination directory
-    .pipe(app.dest(function(file) {
-      console.log(file.cwd);
-      console.log(file.base);
-      console.log(file.path);
-      console.log(file.relative);
-      console.log();
-      return dest;
-    }))
+    .pipe(app.dest(dest('simple')));
+
 });
+
+app.task('default', ['simple']);
 
 function buffer() {
   var files = [];
