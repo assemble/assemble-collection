@@ -2,16 +2,17 @@
   "name": "assemble-collection",
   "description": "Create paginated lists of files using file front matter.",
   "version": "0.1.0",
-  "homepage": "https://github.com/Brian%20Woodward/assemble-collection",
+  "homepage": "https://github.com/assemble/assemble-collection",
   "author": "Brian Woodward (https://github.com/doowb)",
-  "repository": "Brian%20Woodward/assemble-collection",
+  "repository": "assemble/assemble-collection",
   "bugs": {
-    "url": "https://github.com/Brian%20Woodward/assemble-collection/issues"
+    "url": "https://github.com/assemble/assemble-collection/issues"
   },
   "license": "MIT",
   "files": [
+    "LICENSE",
     "index.js",
-    "LICENSE"
+    "utils.js"
   ],
   "main": "index.js",
   "engines": {
@@ -23,5 +24,15 @@
   "keywords": [
     "assemble",
     "collection"
-  ]
+  ],
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "gulp-collection": "^0.3.0",
+    "lazy-cache": "^2.0.1",
+    "src-stream": "^0.1.1"
+  },
+  "devDependencies": {
+    "assemble": "^0.16.2",
+    "gulp-extname": "^0.2.2"
+  }
 }
