@@ -1,20 +1,41 @@
 'use strict';
 
 var utils = require('./utils');
+var cu = require('gulp-collection/lib/utils');
 
 module.exports = function(config) {
   return function(app) {
-    app.define('createIndex', function(name, options) {
-      if (typeof name !== 'string') {
-        options = name;
-        name = null;
+    app.define('createIndex', function(prop, options) {
+      if (typeof prop !== 'string') {
+        options = prop;
+        prop = null;
       }
       var opts = utils.extend({}, config, options);
-      name = name || opts.name;
       var pattern = opts.pattern || '';
 
-      return utils.src(app.toStream(name)
-          .pipe(utils.collection(pattern, opts)));
+      prop = prop || opts.prop || cu.getProp(pattern);
+      var single = cu.single(prop || '');
+
+      opts.groupFn = function(group) {
+        app.data(`collection.${prop}`, group);
+      };
+
+      if (!pattern) {
+        pattern = `:${prop}/:${single}.hbs`;
+      }
+
+      if (typeof opts.list === 'undefined') {
+        opts.list = app.view('list.hbs', {content: utils.listTemplate(prop, single)});
+      }
+
+      if (typeof opts.item === 'undefined') {
+        opts.item = app.view('item.hbs', {content: utils.itemTemplate(single)});
+      }
+
+      return utils.combine(
+        utils.collection(pattern, opts),
+        utils.buffer()
+      );
     });
   };
 };
