@@ -1,6 +1,6 @@
 <div>Tags</div>
-{{!log @root.site}}
-{{#each @root.site.tags as |items tag|}}
+{{!log @root.collection}}
+{{#each @root.collection.tags as |items tag|}}
   <span>{{tag}}</span>
   <ul>
     {{#each items as |item|}}
