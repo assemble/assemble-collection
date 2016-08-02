@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "assemble": "^0.16.2",
-    "gulp-extname": "^0.2.2"
+    "gulp-extname": "^0.2.2",
+    "mocha": "^3.0.0"
   }
 }
