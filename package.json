@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "LICENSE",
     "index.js",
+    "LICENSE",
     "utils.js"
   ],
   "main": "index.js",
@@ -20,6 +20,19 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "gulp-collection": "^0.3.0",
+    "lazy-cache": "^2.0.1",
+    "stream-combiner": "^0.2.2",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "assemble": "^0.16.2",
+    "gulp-extname": "^0.2.2",
+    "gulp-format-md": "^0.1.9",
+    "mocha": "^3.0.0"
   },
   "keywords": [
     "assemble",
@@ -37,19 +50,6 @@
     "pipeline",
     "plugin"
   ],
-  "dependencies": {
-    "extend-shallow": "^2.0.1",
-    "gulp-collection": "^0.3.0",
-    "lazy-cache": "^2.0.1",
-    "stream-combiner": "^0.2.2",
-    "through2": "^2.0.1"
-  },
-  "devDependencies": {
-    "assemble": "^0.16.2",
-    "gulp-extname": "^0.2.2",
-    "gulp-format-md": "^0.1.9",
-    "mocha": "^3.0.0"
-  },
   "verb": {
     "toc": false,
     "layout": "default",
