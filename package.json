@@ -1,6 +1,6 @@
 {
   "name": "assemble-collection",
-  "description": "Create paginated lists of files using file front matter.",
+  "description": "Assemble plugin for creating paginated lists of files using file front matter.",
   "version": "0.1.0",
   "homepage": "https://github.com/assemble/assemble-collection",
   "author": "Brian Woodward (https://github.com/doowb)",
@@ -23,7 +23,19 @@
   },
   "keywords": [
     "assemble",
-    "collection"
+    "assemble-plugin",
+    "collection",
+    "gulp",
+    "index",
+    "indices",
+    "list",
+    "lists",
+    "pager",
+    "paginate",
+    "pagination",
+    "paginationator",
+    "pipeline",
+    "plugin"
   ],
   "dependencies": {
     "extend-shallow": "^2.0.1",

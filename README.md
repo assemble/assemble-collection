@@ -1,6 +1,6 @@
 # assemble-collection [![NPM version](https://img.shields.io/npm/v/assemble-collection.svg?style=flat)](https://www.npmjs.com/package/assemble-collection) [![NPM downloads](https://img.shields.io/npm/dm/assemble-collection.svg?style=flat)](https://npmjs.org/package/assemble-collection) [![Build Status](https://img.shields.io/travis/assemble/assemble-collection.svg?style=flat)](https://travis-ci.org/assemble/assemble-collection)
 
-Create paginated lists of files using file front matter.
+Assemble plugin for creating paginated lists of files using file front matter.
 
 ## Install
 
