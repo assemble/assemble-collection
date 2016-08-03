@@ -1,5 +1,6 @@
 'use strict';
 
+var debug = require('debug')('assemble-collection');
 var utils = require('./utils');
 var cu = require('gulp-collection/lib/utils');
 
@@ -8,6 +9,7 @@ module.exports = function(config) {
     if (!utils.isValid(app, 'assemble-collection')) {
       return;
     }
+    debug('initializing from <%s>', __filename);
 
     /**
      * Creates a pipeline plugin that will group files into a collection based on the data property specified directly or
@@ -64,10 +66,13 @@ module.exports = function(config) {
         opts.item = app.view('item.hbs', {content: utils.itemTemplate(single)});
       }
 
-      return utils.combine(
+      debug('using property "%s"', prop);
+      debug('using pattern "%s"', pattern);
+
+      return utils.combine([
         utils.collection(pattern, opts),
         utils.buffer()
-      );
+      ]);
     });
   };
 };
