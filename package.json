@@ -35,6 +35,34 @@
   "devDependencies": {
     "assemble": "^0.16.2",
     "gulp-extname": "^0.2.2",
+    "gulp-format-md": "^0.1.9",
     "mocha": "^3.0.0"
+  },
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "group-array",
+        "gulp-collection",
+        "paginationator",
+        "permalinks",
+        "placeholders"
+      ]
+    },
+    "reflinks": [
+      "paginationator",
+      "verb",
+      "verb-generate-readme"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
