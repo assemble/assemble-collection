@@ -5,6 +5,9 @@ var cu = require('gulp-collection/lib/utils');
 
 module.exports = function(config) {
   return function(app) {
+    if (!utils.isValid(app, 'assemble-collection')) {
+      return;
+    }
 
     /**
      * Creates a pipeline plugin that will group files into a collection based on the data property specified directly or

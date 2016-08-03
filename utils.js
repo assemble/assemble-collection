@@ -10,6 +10,7 @@ require = utils;
 
 require('extend-shallow', 'extend');
 require('gulp-collection', 'collection');
+require('is-valid-app', 'isValid');
 require('stream-combiner', 'combine');
 require('through2', 'through');
 require = fn;
